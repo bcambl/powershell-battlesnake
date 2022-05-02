@@ -2,9 +2,6 @@
 BeforeAll {
     # import our logic to be tested
     . .\Add-Logic.ps1
-
-    # Override the global write-host function to silence output
-    function global:Write-Host() {}
 }
 
 Describe 'Get-Move' {
@@ -37,7 +34,7 @@ Describe 'Get-Move' {
             you = $me
         }
         $gameState = $state | ConvertTo-Json -Depth 10
-        for ($i=0; $i -le 1000; $i++) {
+        for ($i=0; $i -le 10; $i++) {
             $moveJson = Get-Move $gameState | ConvertFrom-Json
             $moveJson.move | Should -Not -Be "left"
         }
