@@ -1,7 +1,7 @@
 PowerShell Battlesnake QuickStart
 =================================
 
-A Starter Battlesnake written in PowerShell Core 7 based on [community created starter project guidelines](https://docs.battlesnake.com/references/starter-projects#contributing-your-own-starter-project).
+A Starter Battlesnake written in PowerShell Core 7.
 
 Learn more at https://play.battlesnake.com/
 
@@ -17,15 +17,15 @@ $info = [PSCustomObject]@{
     version = "0.0.1"
 }
 ```
-Refer to [Battlesnake Personalization](https://docs.battlesnake.com/references/personalization) for how to customize your Battlesnake's appearance using these values.
+Refer to [Battlesnake Customization](https://docs.battlesnake.com/guides/customizations) for how to customize your Battlesnake's appearance using these values.
 
 ## Changing Behavior
 On every turn of each game your Battlesnake receives information about the game board and must decide its next move.
 
 Locate the `Get-Move` function inside [Add-Logic.ps1](Add-Logic.ps1#L49). Possible moves are "up", "down", "left", or "right" and initially your Battlesnake will choose a move randomly. Your goal as a developer is to read information sent to you about the game (available in the `$gameState` variable) and decide where your Battlesnake should move next. All your Battlesnake logic lives in [Add-Logic.ps1](Add-Logic.ps1), and this is the code you will want to edit.  
-Refer to the ['object definitions' documentation](https://docs.battlesnake.com/references/api#object-definitions) for the structure of `$gameState`.
+Refer to the ['object definitions'](https://docs.battlesnake.com/api/requests/move) in the `/move` POST request documentation for the structure of `$gameState`.
 
-See the [Battlesnake Game Rules](https://docs.battlesnake.com/references/rules) for more information on playing the game, moving around the board, and improving your algorithm.
+See the [Battlesnake Game Rules](https://docs.battlesnake.com/guides/playing/rules) for more information on playing the game, moving around the board, and improving your algorithm.
 
 ## Running Your Battlesnake
 ### Run Locally
